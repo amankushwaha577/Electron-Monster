@@ -6,15 +6,16 @@ function createWindow () {
     width: 800,
     height: 600,
 
-    // frame:false , 
-    // backgroundColor:'#ff0000',
-    // alwaysOnTop:true,
-    // title:'New Title',
-    resizable:false,
   })
 
   // Load index.html into the window
   win.loadFile('index.html')
+  // win.show();
+
+  // Creating child window
+  let child = new BrowserWindow({parent: win});
+  child.loadFile('child.html');
+  // child.show();
 
   // Dev Tool
   win.webContents.openDevTools();
